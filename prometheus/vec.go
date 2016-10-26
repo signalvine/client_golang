@@ -47,6 +47,10 @@ func newMetricVec(desc *Desc, newMetric func(lvs ...string) Metric) *MetricVec {
 	}
 }
 
+func NewMetricVec(desc *Desc, newMetric func(lvs ...string) Metric) *MetricVec {
+	return newMetricVec(desc, newMetric)
+}
+
 // metricWithLabelValues provides the metric and its label values for
 // disambiguation on hash collision.
 type metricWithLabelValues struct {
